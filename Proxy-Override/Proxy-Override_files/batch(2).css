@@ -1,0 +1,190 @@
+/* module-key = 'com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts', location = 'css/keyboard-shortcuts.css' */
+.shortcutsmenu {
+    font-size: 13px;
+    position: relative;
+}
+
+#keyboard-shortcuts-dialog .module {
+    clear: none;
+    float: left;
+    margin: 0 7px 8px 8px;
+    width: 47%;
+}
+
+#keyboard-shortcuts-dialog .module span {
+    line-height: 1.8;
+}
+
+#keyboard-shortcuts-dialog .module .item-description {
+    color: var(--ds-text, #666);
+    float: left;
+    font-weight: normal;
+    margin: 0 10px 0 0;
+    padding: 6px 0 0 0;
+    text-align: left;
+    width: 40%;
+    clear: left;
+}
+
+#general-shortcuts-panel .module .item-description {
+    width: 49%;
+}
+
+#keyboard-shortcuts-dialog .module:nth-child(odd) {
+    clear: left;
+    margin-right: 15px;
+}
+
+#keyboard-shortcuts-dialog .module .mod-item {
+    margin: 7px 0;
+    padding: 0;
+}
+
+#keyboard-shortcuts-dialog .module ul.mod-item li.item-details {
+    list-style-type: none;
+    margin: 0 0 9px 0;
+    clear: left;
+}
+
+#keyboard-shortcuts-dialog .module .mod-header {
+    background-position: 0 12px;
+}
+
+#keyboard-shortcuts-dialog .module .mod-content {
+    padding: 0 2px 0 0;
+}
+
+#keyboard-shortcuts-dialog .module h3 {
+    border-bottom: thin solid var(--ds-border, #BBB);
+    color: var(--ds-text, #000);
+    font-weight: normal;
+    margin: 0 0 1px 0;
+    padding: 2px 2px 2px 0;
+}
+
+#keyboard-shortcuts-dialog .module kbd {
+    background: var(--ds-surface, #fff) url(//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/1000.0.0-144a885778a8/_/download/resources/com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts/images/key_bg.png) repeat-x scroll 0 100%;
+    border: 1px solid var(--ds-border, #ddd);
+    -moz-border-radius: 0.166em;
+    -webkit-border-radius: 0.166em;
+    border-radius: 0.166em;
+    display: inline-block;
+    padding: 0 6px;
+    text-align: center;
+}
+
+#keyboard-shortcuts-dialog .module kbd.regular-key {
+    min-width: 16px;
+    padding: 0 4px;
+}
+
+#keyboard-shortcuts-dialog .module kbd.modifier-key {
+    min-width: 26px;
+}
+
+#keyboard-shortcuts-dialog .module .key-separator {
+    padding: 0 7px;
+}
+
+.keyboard-shortcut-dialog-panel-header {
+    font-size: 13px;
+    margin: 0 8px 15px 7px;
+}
+
+#keyboard-shortcut-enabled-checkbox {
+    margin: 3px 3px 3px 0;
+}
+
+.keyboard-shortcut-dialog-panel-footer {
+    font-size: 13px;
+    margin: 0 8px 10px;
+    clear: both;
+}
+
+/*Styles for the Editor Autoformatting panel in the Keyboard Shortcuts dialog*/
+
+#autoformat-shortcuts-panel .mod-item h1 {
+    margin:  0;
+    width: 147px;
+}
+
+#autoformat-shortcuts-panel .mod-item h3 {
+    border-bottom: none;
+}
+
+#autoformat-shortcuts-panel .mod-item blockquote {
+    margin:  0 20px;
+}
+
+#autoformat-shortcuts-panel .mod-item ol {
+    margin:  0;
+    padding-left: 18px;
+}
+
+#autoformat-shortcuts-panel .mod-item img {
+    padding-top:  5px;
+}
+
+#autoformat-shortcuts-panel .mod-item .item-description ul {
+    margin:  0;
+    padding-left: 14px;
+}
+
+#autoformat-shortcuts-panel .mod-item .item-description li {
+    padding-top:  3px;
+}
+
+#autoformat-shortcuts-panel .module .item-description {
+    padding:  0;
+}
+
+#autoformat-shortcuts-panel .module .item-description {
+    width: 43%;
+}
+
+#autoformat-shortcuts-panel .table-action {
+    display: inline-block;
+    margin-top: 3px;
+}
+
+#autoformat-shortcuts-panel .style-action {
+    display: inline-block;
+    margin-top: 1px;
+}
+
+/*This is really only needed for IE8*/
+#autoformat-shortcuts-panel .styles-module {
+    height: 135px;
+}
+
+#editor-shortcuts-panel.foxy-ux-enhancement .key-separator {
+    display: none;
+}
+
+#editor-shortcuts-panel.foxy-ux-enhancement .modifier-key {
+    margin-right: 5px;
+}
+/* module-key = 'confluence.web.resources:linkpopup-resources', location = 'includes/css/linkpage.css' */
+#link-page-popup .dialog-panel-body,#link-page-popup-form{overflow:hidden}#link-page-popup-form .text{width:400px}
+/* module-key = 'confluence.web.resources:network-resources-css', location = 'includes/css/network-macro.less' */
+.network-macro.follow-tiny .tabletitle{border:none;color:var(--ds-text, #333);font-weight:normal}.network-macro.follow-tiny .tabletitle .subtitle{color:var(--ds-text-subtle, #666)}.network-macro.follow-tiny .userLogo{height:24px;width:24px}.network-macro form.follow-user{margin:10px 0}.network-macro form.follow-user span.container{color:var(--ds-text, #000);padding-right:10px;font-weight:normal;position:relative}.network-macro ol.autocompleter{border:1px solid var(--ds-border, #ccc);box-shadow:var(--ds-shadow-overflow, 0 3px 6px rgba(0,0,0,0.2));font-size:14px;left:0;margin:0 !important;max-width:248px;top:1.6em;width:auto !important}.network-macro ol.autocompleter li{padding:3px 10px}.network-macro ul{margin:0;padding:0}.network-macro ul li{display:inline}.network-macro .avatars li .userLogoLink{text-decoration:none}.network-macro .description{color:var(--ds-text-subtle, #666);margin:5px 0}.network-macro .follow-dashboard{padding-top:10px}.network-macro .follow-dashboard .avatars{width:100%}.network-macro .follow-user-box{color:var(--ds-text-subtle, #666);float:left;width:150px}.network-macro .follow-user-result{color:var(--ds-text-subtle, #666);display:none;padding-top:8px}.network-macro .follow-user-result div{padding-left:20px}.network-macro .follow-user-result img{margin-left:-20px;margin-top:-2px}.network-macro .userLogo{height:36px;width:36px;-ms-interpolation-mode:bicubic}
+/* module-key = 'confluence.web.resources:profile-macro-styles', location = 'includes/css/personal-sidebar.css' */
+#personal-info-sidebar{background:var(--ds-surface-overlay,#eee);display:inline;float:right;margin-right:-17px;padding-right:12px;position:relative}#personal-info-sidebar.collapsed{overflow:hidden;width:0}.has-personal-sidebar #content{margin-right:360px}.has-personal-sidebar #content .pageSection{margin-right:-360px}.has-personal-sidebar #content.sidebar-collapsed .pageSection{margin-right:-10px}.has-personal-sidebar #content.sidebar-collapsed{margin:0 10px 0 0}#personal-info-sidebar .sidebar-content{margin:0;padding:10px;width:320px}#personal-info-sidebar.collapsed .sidebar-content{visibility:hidden}.sidebar-collapse{background:var(--ds-surface-overlay,#ddd) url(//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/1000.0.0-144a885778a8/_/download/resources/confluence.web.resources:profile-macro-styles/../../../images/icons/sidebar/collapse.gif) no-repeat 4px 50%;display:block;height:100%;position:absolute;right:0;text-indent:999em;top:0;width:12px}a.sidebar-collapse:hover{background-color:var(--ds-surface-overlay-hovered,#bbb);background-image:url(//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/1000.0.0-144a885778a8/_/download/resources/confluence.web.resources:profile-macro-styles/../../../images/icons/sidebar/collapse-hover.gif)}.collapsed .sidebar-collapse{background-image:url(//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/1000.0.0-144a885778a8/_/download/resources/confluence.web.resources:profile-macro-styles/../../../images/icons/sidebar/expand.gif);background-position:3px 50%;left:0}.collapsed a.sidebar-collapse:hover{background-image:url(//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/1000.0.0-144a885778a8/_/download/resources/confluence.web.resources:profile-macro-styles/../../../images/icons/sidebar/expand-hover.gif)}.sidebar-collapse:focus{outline:0}.collapsed .sidebar-collapse,#personal-info-sidebar{-moz-border-radius-bottomleft:3px;-moz-border-radius-topleft:3px;-webkit-border-bottom-left-radius:3px;-webkit-border-top-left-radius:3px;border-bottom-left-radius:3px;border-top-left-radius:3px}#personal-info-sidebar .vcard{margin-bottom:5px;margin-top:10px}ol.recentlyupdated li{padding-bottom:2px}ol.recentlyupdated{line-height:1.36;list-style:none;margin:0;margin-top:10px;padding:0}ol.recentlyupdated a{display:block;margin-top:5px}ol.recentlyupdated span.metadata{color:var(--ds-text-subtle,#666);font-size:12px}#personal-info-sidebar a.more-edit:link,#personal-info-sidebar a.more-edit:visited,#personal-info-sidebar a.more-edit:hover{float:right;font-size:12px}#personal-info-sidebar .recently-updated-sidebar{padding:5px 0}#personal-info-sidebar h2.subheading{border-bottom:0;color:var(--ds-text-subtle,#666);font-size:9pt;font-weight:normal;margin-top:5px}#personal-info-sidebar h2.subheading .subtitle,#personal-info-sidebar .network-macro .network-macro a.show-all{color:var(--ds-text-subtle,#666)}#personal-info-sidebar .sidebar-section{margin-bottom:15px}#personal-info-sidebar .network-macro h2.subheading{padding:5px 0 2px}#personal-info-sidebar .network-macro .avatars{margin:0;padding:0;width:300px}#personal-info-sidebar .network-macro .description{color:var(--ds-text-subtle,#666);margin:5px 0}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources', location = 'css/icons.css' */
+.confluence-icon-blogpost,.content-type-blogpost{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-blog.svg") no-repeat}.confluence-icon-page,.content-type-page{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-page.svg") no-repeat}.confluence-icon-question,.content-type-question{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-question.svg") no-repeat}.confluence-icon-home,.content-type-home{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-home.svg") no-repeat}.confluence-icon-space,.content-type-space,.content-type-spacedesc{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-space.svg") no-repeat}.confluence-icon-spaces,.content-type-spaces{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-spaces.svg") no-repeat}.confluence-icon-profile,.content-type-profile{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-profile.svg") no-repeat}.confluence-icon-personal-space,.content-type-personal-space,.content-type-personalspacedesc{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-personal-space.svg") no-repeat}.confluence-icon-comment,.content-type-comment{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-comment.svg") no-repeat}.confluence-icon-comment-count,.content-type-comment-count{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-comment-count.svg") no-repeat}.confluence-icon-like,.content-type-like{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-like.svg") no-repeat}.confluence-icon-popular{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-popular.svg") no-repeat}.confluence-icon-all-updates{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-all.svg") no-repeat}.confluence-icon-starred{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-starred.svg") no-repeat}.confluence-icon-recently-worked-on{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-recently-worked-on.svg") no-repeat}.confluence-icon-recently-viewed{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-recently-viewed.svg") no-repeat}.confluence-icon-blank-page{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-blank-page.svg") no-repeat}.confluence-icon-decision{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-decision.svg") no-repeat}.confluence-icon-folder{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-folder.svg") no-repeat}.confluence-icon-link{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-link.svg") no-repeat}.confluence-icon-meeting-notes{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-meeting-notes.svg") no-repeat}.confluence-icon-jira{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-jira.svg") no-repeat}.confluence-icon-requirements{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-requirements.svg") no-repeat}.confluence-icon-retrospective{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-retrospective.svg") no-repeat}.confluence-icon-task-report{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-task-report.svg") no-repeat}.confluence-icon-playbook-daci{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-playbook-daci.svg") no-repeat}.confluence-icon-playbook-experience-canvas{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-playbook-experience-canvas.svg") no-repeat}.confluence-icon-playbook-health-monitor{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-playbook-health-monitor.svg") no-repeat}.confluence-icon-playbook-project-poster{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-playbook-project-poster.svg") no-repeat}.confluence-icon-troubleshoot{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-troubleshoot.svg") no-repeat}.confluence-icon-how-to{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-how-to.svg") no-repeat}.confluence-icon-grab-handle{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-grab-handle.svg") no-repeat}.confluence-icon-status-macro{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-status-macro.svg") no-repeat !important}.confluence-icon-whiteboard,.content-type-whiteboard{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-whiteboard.svg") no-repeat}.confluence-icon-database,.content-type-database{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-database.svg") no-repeat}.confluence-icon-embed,.content-type-embed{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-embed.svg") no-repeat}.confluence-icon-folder-content-type,.content-type-folder{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-folder-content-type.svg") no-repeat}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources', location = 'css/file-icons.css' */
+.confluence-icon-pdf,.content-type-attachment-pdf{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-pdf.svg") no-repeat}.confluence-icon-image,.content-type-attachment-image,.content-type-attachment-jpg,.content-type-attachment-gif,.content-type-attachment-png{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-image.svg") no-repeat}.confluence-icon-code,.content-type-attachment-code,.content-type-attachment-xml,.content-type-attachment-css,.content-type-attachment-js,.content-type-attachment-java,.content-type-attachment-html{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-code.svg") no-repeat}.confluence-icon-zip,.content-type-attachment-zip,.content-type-attachment-jar{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-zip.svg") no-repeat}.confluence-icon-spreadsheet,.content-type-attachment-spreadsheet,.content-type-attachment-excel97-template,.content-type-attachment-excel97,.content-type-attachment-excel,.content-type-attachment-excel-macro,.content-type-attachment-excel-template{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-spreadsheet.svg") no-repeat}.confluence-icon-presentation,.content-type-attachment-preso,.content-type-attachment-powerpoint97,.content-type-attachment-powerpoint97-template,.content-type-attachment-powerpoint,.content-type-attachment-powerpoint-macro,.content-type-attachment-powerpoint-slideshow{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-preso.svg") no-repeat}.confluence-icon-file,.content-type-attachment-text,.content-type-attachment-file,.content-type-attachment-word97-template,.content-type-attachment-word97,.content-type-attachment-word,.content-type-attachment-word-template,.content-type-attachment-unknown{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-file.svg") no-repeat}.confluence-icon-multimedia,.content-type-attachment-multimedia{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-multimedia.svg") no-repeat}.confluence-icon-video,.content-type-attachment-multimedia-video{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-video.svg") no-repeat}.confluence-icon-audio,.content-type-attachment-multimedia-audio{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/confluence-icon-audio.svg") no-repeat}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources', location = 'css/confluence-sidebar-icons.css' */
+.confluence-sidebar-open-icon-page,.acs-nav-item.wiki .icon,.acs-nav-item.pinned_page .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-pages.svg") no-repeat}.confluence-sidebar-open-icon-blog,.acs-nav-item.blog .icon,.acs-nav-item.pinned_blog_post .icon,.ia-secondary-header-title.blog .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-blog.svg") no-repeat}.confluence-sidebar-open-icon-profile,.acs-nav-item.profile .icon,.acs-nav-item.pinned_profile .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-profile.svg") no-repeat}.confluence-sidebar-open-calendar,.acs-nav-item.calendar .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-calendars.svg") no-repeat}.confluence-sidebar-open-icon-pagetree,.ia-secondary-header-title.wiki .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-pagetree.svg") no-repeat}.confluence-sidebar-open-icon-blueprint,.acs-nav-item.pinned_page.blueprint .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-blueprints.svg") no-repeat}.confluence-sidebar-open-icon-space,.acs-nav-item.pinned_space .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-spacehome.svg") no-repeat}.confluence-sidebar-open-icon-link,.acs-nav-item.external_link .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-link.svg") no-repeat}.confluence-sidebar-open-alphabetical{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-open-alphabetical.svg") no-repeat}.confluence-sidebar-closed-icon-page,.collapsed .acs-nav-item.wiki .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-closed-pages.svg") no-repeat}.confluence-sidebar-closed-icon-blog,.collapsed .acs-nav-item.blog .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-closed-blog.svg") no-repeat}.confluence-sidebar-closed-icon-profile,.collapsed .acs-nav-item.pinned_profile .icon,.collapsed .acs-nav-item.profile .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-closed-profile.svg") no-repeat}.confluence-sidebar-closed-icon-link,.collapsed .acs-nav-item.space-calendar-sidebar-link .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-closed-profile.svg") no-repeat}.confluence-sidebar-closed-icon-pagetree,.collapsed .ia-secondary-header-title.page-tree .icon{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-closed-pagetree.svg") no-repeat}.confluence-sidebar-closed-icon-spaceshortcut,.collapsed .quick-links-section{background:url("//d2cqwhcszuuynl.cloudfront.net/commbank.atlassian.net/wiki/s/19.0.85/_/download/resources/com.atlassian.confluence.plugins.confluence-icons:confluence-icon-resources/assets/icons/sidebar-closed-spaceshortcuts.svg") no-repeat}
+/* module-key = 'confluence.macros.advanced:common-resources', location = 'com/atlassian/confluence/plugins/macros/advanced/css/common.less' */
+.macro-blank-experience{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;border:1px solid var(--ds-border, #ccc);min-height:125px;padding:15px 200px 20px 20px}.macro-blank-experience p{color:var(--ds-text-subtlest, #707070)}.macro-blank-experience .create-post{margin-top:15px}.columnLayout .cell.aside .macro-blank-experience,.columnLayout.threeColumns .macro-blank-experience,.columnLayout.three-equal .macro-blank-experience,.columnLayout .sidebars .macro-blank-experience{background:none;padding:15px 20px 20px 20px}
+/* module-key = 'confluence.macros.advanced:get-more', location = 'com/atlassian/confluence/plugins/macros/advanced/css/recently-updated-common.css' */
+.recently-updated .waiting-image{vertical-align:text-bottom;display:none}.loading .waiting-image{display:inline}.recently-updated ul{padding:0;margin:0;list-style-type:none}.recently-updated>h2{margin-top:0}.update-item-icon{float:left}.update-item-details{padding-left:21px;margin-right:10px}.recently-updated .results-container{margin-top:10px}.more-link-container{margin-top:10px;padding-top:7px;border-top:1px solid var(--ds-border,#ccc)}.recently-updated.macro-blank-experience{min-height:auto;border:1px solid var(--ds-border,#091e42);border-radius:4px;padding:var(--ds-space-150,12px)}.recently-updated.macro-blank-experience p{color:var(--ds-text-subtlest,#626f86);margin-top:var(--ds-space-100,8px)}.recently-updated.macro-blank-experience h5{color:var(--ds-text-subtlest,#626f86)}.recently-updated.macro-blank-experience.edit{padding:var(--ds-space-100)}
+/* module-key = 'confluence.macros.advanced:get-more', location = 'com/atlassian/confluence/plugins/macros/advanced/css/recently-updated-print.css' */
+@media print{.recently-updated .more-link-container{display:none}}
+/* module-key = 'confluence.macros.advanced:recently-updated-sidebar-resources', location = 'com/atlassian/confluence/plugins/macros/advanced/css/recently-updated-sidebar.css' */
+.recently-updated-sidebar .update-item{overflow:hidden}.recently-updated-sidebar .update-item,.recently-updated-sidebar .more-link-container{margin-top:7px}.recently-updated-sidebar .update-item:first-child{margin-top:0}.recently-updated-sidebar ul{margin:0;padding:0;list-style:none}.recently-updated-sidebar .update-item-meta{overflow:auto;color:var(--ds-text-subtlest,#707070);font-size:12px;line-height:16px}.update-item-meta .update-item-changes a,.update-item-meta .update-item-changes a:link,.update-item-meta .update-item-changes a:hover,.update-item-meta .update-item-changes a:visited,.update-item-meta .update-item-changes a:active{color:inherit}.recently-updated-sidebar .update-item-meta>li{float:left}.recently-updated-sidebar .update-item-meta>li:first-child:before{content:'';margin:0}.recently-updated-sidebar .update-item-meta>li:before{content:'\2022';margin:0 5px}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-embedded-file-view-resources', location = '/css/embedded-file-view.less' */
+.wiki-content .confluence-embedded-file-wrapper .confluence-embedded-file{cursor:pointer}.wiki-content .confluence-embedded-file-wrapper .overlay{position:absolute;bottom:5px;left:7px;right:5px;color:var(--ds-text-inverse, #fff);line-height:16px;font-size:12px;font-weight:normal;font-style:normal;font-family:Arial,sans-serif;cursor:pointer}.wiki-content .confluence-embedded-file-wrapper .overlay .comment-count-overlay{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:var(--ds-blanket, rgba(0,0,0,0.8));border-radius:3px;padding:5px;display:block;float:left;margin-right:2px;background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxNyAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpza2V0Y2g9Imh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaC9ucyI+PHBhdGggZD0iTTE2IDEuOTkzdjExLjAyNWMtLjAxNC40ODItLjU1MS45OTItMSAuOTkyaC0zLjVsLTIuOTg3IDQuMjktMy4wMTMtNC4yOWgtMy40OTVjLS41NTQgMC0xLjAwNS0uNDQ1LTEuMDA1LS45OTJ2LTExLjAyNWMwLS41NDguNDUxLS45OTMgMS4wMDUtLjk5M2gxMi45OTVjLjU2IDAgLjk5NS40NCAxIC45OTN6bS0xMy45OTUtMS45OTNjLTEuMTA3IDAtMi4wMDUuODk1LTIuMDA1IDEuOTkzdjExLjAyNWMwIDEuMS44OTQgMS45OTIgMi4wMDUgMS45OTJoMi45OTVsMy41IDQuOTkzIDMuNS00Ljk5M2gzYzEuMTAxIDAgMi4wMTEtLjg5MiAyLTEuOTkydi0xMS4wMjVjLS4wMTEtMS4xLS44OTEtMS45OTMtMi0xLjk5M2gtMTIuOTk1eiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);background-position:center 6px;background-repeat:no-repeat;width:26px;height:26px;text-align:center}.wiki-content .confluence-embedded-file-wrapper .overlay .comment-count-overlay .content{font-size:10px;text-align:center;vertical-align:text-top}.wiki-content .confluence-embedded-file-wrapper .overlay .file-type-desc-overlay{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:var(--ds-blanket, rgba(0,0,0,0.8));border-radius:3px;padding:5px;display:block;float:left;max-width:100%}.wiki-content .confluence-embedded-file-wrapper .overlay .file-type-desc-overlay .aui-icon{display:inline-block;left:0px;line-height:0px;position:relative;vertical-align:text-top;top:auto}.wiki-content .confluence-embedded-file-wrapper .overlay .file-type-desc-overlay .content{vertical-align:middle}.wiki-content .confluence-embedded-file-wrapper .overlay .edit-in-app-overlay{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:var(--ds-blanket, rgba(0,0,0,0.8));border-radius:3px;padding:5px;display:block;float:left;margin-left:4px}.wiki-content .confluence-embedded-file-wrapper .overlay .edit-in-app-overlay a{color:var(--ds-text-inverse, #fff);vertical-align:text-top}.wiki-content .confluence-embedded-file-wrapper.has-comment-overlay .file-type-desc-overlay{max-width:84%}
+/* module-key = 'com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-resources', location = '/css/vfm.css' */
+.confluence-embedded-file-wrapper{position:relative;display:inline-block;max-width:100%}.confluence-embedded-file-wrapper .confluence-embedded-file{display:block;margin-left:2px;margin-right:2px;max-width:100%}.confluence-embedded-file-wrapper .confluence-embedded-file img{display:block;border:1px solid var(--ds-border,#ddd);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.confluence-embedded-file-wrapper .confluence-embedded-file .title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;color:var(--ds-text,#333);font:var(--ds-font-body,Arial,sans-serif);position:absolute;top:50%;left:0;text-align:center;padding:30px 10px 0 10px}

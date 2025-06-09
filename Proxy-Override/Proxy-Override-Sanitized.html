@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifying Global Proxy Settings via MDM for Traffic Capture</title>
+    <!-- Add highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: #333;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 2em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid #eaecef;
+            padding-bottom: 0.3em;
+        }
+        
+        h3 {
+            font-size: 1.25em;
+        }
+        
+        p {
+            margin: 1em 0;
+        }
+        
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            background-color: #f6f8fa;
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: #f6f8fa;
+            border-radius: 3px;
+            padding: 16px;
+            overflow: auto;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 0.9em;
+            line-height: 1.45;
+            margin: 0;
+        }
+        
+        pre code {
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1.5em auto;
+        }
+        
+        .note, .warning, .tip, .info {
+            padding: 8px 15px;
+            margin: 15px 0;
+            border-left: 5px solid;
+            border-radius: 3px;
+        }
+        
+        .note {
+            background-color: #f8f8f8;
+            border-left-color: #f0ad4e;
+        }
+        
+        .note p, .warning p, .tip p, .info p {
+            margin: 0.5em 0;
+        }
+        
+        .warning {
+            background-color: #fdf7f7;
+            border-left-color: #d9534f;
+        }
+        
+        .tip {
+            background-color: #f3f9f4;
+            border-left-color: #5cb85c;
+        }
+        
+        .info {
+            background-color: #f4f8fa;
+            border-left-color: #5bc0de;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1em 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f6f8fa;
+        }
+        
+        .table-of-contents {
+            background-color: #f8f9fa;
+            border: 1px solid #eaecef;
+            border-radius: 3px;
+            padding: 1em;
+            margin: 1em 0;
+            display: inline-block;
+        }
+        
+        .table-of-contents ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .table-of-contents li {
+            margin: 0.5em 0;
+        }
+        
+        .table-of-contents a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+        
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="note">
+        <h2>DISCLAIMER: EDUCATIONAL PURPOSE ONLY</h2>
+        <p>This article is provided strictly for educational purposes. Modifying system configurations or tampering with corporate security measures without explicit permission is prohibited and may violate organizational policies, employment agreements, and applicable laws.</p>
+        <p>This content demonstrates how corporate network defenses might be circumvented, specifically to educate security professionals about potential vulnerabilities. Organizations should implement a defense-in-depth approach with multiple layers of security to protect traffic sent and received from endpoints, including protection against threats from internal users (staff/insiders).</p>
+        <p>Always obtain proper authorization before implementing any techniques described in this article.</p>
+    </div>
+
+    <div class="table-of-contents">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#what-is-charles-proxy">What is Charles Proxy?</a></li>
+            <li><a href="#understanding-pac">Understanding Proxy Auto-Configuration (PAC)</a></li>
+            <li><a href="#traffic-flow">Current vs. Desired Traffic Flow</a></li>
+            <li><a href="#implementation">Step-by-Step Implementation</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </div>
+
+    <h1>Modifying Global Proxy Settings via MDM for Traffic Capture</h1>
+    
+    <h2 id="introduction">Introduction</h2>
+    <p>In corporate environments, security teams often need to inspect network traffic for troubleshooting, security analysis, or development purposes. While many organizations implement enterprise-wide proxy solutions, there are scenarios where security professionals need to capture and analyze all traffic from a specific workstation, including system-level communications that might bypass standard proxy configurations.</p>
+    <p>This article explains how to modify global proxy settings managed by Mobile Device Management (MDM) solutions to route all workstation traffic through Charles Proxy, a popular HTTP debugging proxy application. By understanding this process, security professionals can better implement defense-in-depth strategies to protect corporate networks.</p>
+
+    <h2 id="what-is-charles-proxy">What is Charles Proxy?</h2>
+    <p>Charles is an HTTP proxy, HTTP monitor, and reverse proxy that enables developers and security professionals to view HTTP and SSL/HTTPS traffic between their machine and the Internet. It allows for inspection and modification of requests and responses, making it valuable for debugging, testing, and security analysis.</p>
+
+    <h2 id="understanding-pac">Understanding Proxy Auto-Configuration (PAC)</h2>
+    <p>A Proxy Auto-Configuration (PAC) file is a JavaScript function that determines whether web browser requests go directly to the destination or through a proxy server. In corporate environments, these PAC files are often centrally managed through MDM solutions and cannot be easily modified by end-users.</p>
+
+    <h2 id="traffic-flow">Current vs. Desired Traffic Flow</h2>
+    
+    <h3>Current Traffic Flow:</h3>
+    <p>In a typical corporate environment with MDM-enforced proxy settings, traffic flows as follows:</p>
+    
+    <div class="warning">
+        <p>GUI &amp; System Applications: The traffic goes to the Enterprise Proxy or connects directly based on rules in the Enterprise PAC File, this is enforced by a MDM Profile (JAMF) or GPO<br>
+        Those settings are typically immutable and taking precedences over any other settings.<br>
+        The traffic cannot be "manually" changed, <sub>or at least, it isn't meant to be changed…</sub></p>
+    </div>
+    
+    <div class="tip">
+        <p>Command Line (CLI) Applications: Traffic can be manually configured to go through Charles → Alpaca → Enterprise Proxy or Direct based on Enterprise PAC File</p>
+    </div>
+    
+    <div class="tip">
+        <p>Firefox Browser: Traffic can be manually configured to go through Charles → Alpaca → Enterprise Proxy or Direct based on Enterprise PAC File</p>
+    </div>
+
+    <h3>Desired Traffic Flow:</h3>
+    <p>Our goal is to modify the system to route ALL traffic through Charles for inspection:</p>
+    
+    <div class="tip">
+        <p>ALL Traffic (GUI, System, CLI, Browsers): Charles → Alpaca → Enterprise Proxy or Direct based on Enterprise PAC File</p>
+    </div>
+    
+    <div class="info">
+        <p>IMPORTANT NOTE: This configuration will break applications that do not support or tolerate SSL interception, such as those using Mutual TLS (M-TLS), Expect-CT, or Certificate Pinning. If such connections fail, you'll need to exclude the problematic domains in Charles Proxy settings.</p>
+    </div>
+
+    <h2 id="implementation">Step-by-Step Implementation</h2>
+    
+    <h3>Step 1: Create a Simple PAC File</h3>
+    <p>First, we need to create a PAC file that directs all traffic to the local Charles proxy:</p>
+    
+    <pre><code class="language-javascript">function FindProxyForURL(url, host) {
+    return "PROXY localhost:8888";
+}</code></pre>
+    
+    <p>This simple PAC file instructs the system to route all traffic through the Charles proxy running on localhost port 8888.</p>
+
+    <h3>Step 2: Set Up a local web server hosting the PAC File</h3>
+    <p>Since the MDM expects a URL for the PAC file (not a file:// path), we need to serve our PAC file via HTTP. We'll create a Node.js server for this purpose:</p>
+    
+    <pre><code class="language-javascript">const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+// Define the path to the proxy.pac file
+const homeDir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
+const proxyPacPath = path.join(homeDir, '.config', 'charles', 'proxy.pac');
+
+// Create the HTTP server
+const server = http.createServer((req, res) => {
+  // Check if the request is for /proxy.pac
+  if (req.url === '/proxy.pac') {
+    // Read the file and serve its content
+    fs.readFile(proxyPacPath, (err, data) => {
+      if (err) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('File not found');
+      } else {
+        res.writeHead(200, { 'Content-Type': 'application/x-ns-proxy-autoconfig' });
+        res.end(data);
+      }
+    });
+  } else {
+    // Handle any other route
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not found');
+  }
+});
+
+// Have the server listen on port 80
+server.listen(80, () => {
+  console.log('Server is listening on port 80');
+});</code></pre>
+    
+    <p>Save this as <code>node_pac_server.js</code> and run it in the background:<br>
+    You can create a <code>KeepAlive</code> LaunchAgent or Daemon if you want this to always be available.</p>
+    
+    <pre><code class="language-bash">nohup node $HOME/.config/charles/node_pac_server.js > server.log 2>&1 &</code></pre>
+    
+    <p>You can verify the server is working by checking:<br>
+    <code class="language-bash">sudo lsof -i :80 -P -n | grep LISTEN</code><br>
+    # or<br>
+    <code class="language-bash">curl -i http://localhost/proxy.pac</code></p>
+    
+    <img src="./Proxy-Override_files/local pac.png" alt="Local PAC file verification">
+
+    <h3>Step 3: Locate the MDM-Managed Proxy Settings</h3>
+    <p>To modify the global proxy settings, we first need to find where the PAC URL is defined in the MDM configuration:</p>
+    
+    <pre><code class="language-bash">sudo su -
+cd "/Library/Managed Preferences/"
+grep -r "pac.internal.company/company.pac" .</code></pre>
+    
+    <p>This will show you which files contain references to the enterprise PAC file.<br>
+    Typically with JAMF, these will be in: <code>/Library/Managed Preferences/com.apple.SystemConfiguration.plist</code></p>
+
+    <h3>Step 4: Modify the System Configuration Files</h3>
+    
+    <h4>Before making changes, back up the original files:</h4>
+    <pre><code class="language-bash">ditto com.apple.SystemConfiguration.plist com.apple.SystemConfiguration.plist.bak
+ditto ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist.bak</code></pre>
+    
+    <h4>Convert the binary plist files to XML format for editing:</h4>
+    <pre><code class="language-bash">plutil -convert xml1 com.apple.SystemConfiguration.plist
+plutil -convert xml1 ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist</code></pre>
+    
+    <h4>Edit the files to replace the enterprise PAC URL with your local one:</h4>
+    <pre><code class="language-bash">vim com.apple.SystemConfiguration.plist
+vim ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist</code></pre>
+    
+    <img src="./Proxy-Override_files/Profile Edit.png" alt="Profile Edit screenshot">
+    
+    <h4>Replace ProxyAutoConfigURLString value from the enterprise PAC URL to:</h4>
+    <p><code>http://localhost/proxy.pac</code></p>
+    
+    <h4>Convert the files back to binary format:</h4>
+    <pre><code class="language-bash">plutil -convert binary1 com.apple.SystemConfiguration.plist
+plutil -convert binary1 ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist</code></pre>
+    
+    <h4>Verify the changes (this will not perform any conversion…):</h4>
+    <pre><code class="language-bash">plutil -convert xml1 -o - com.apple.SystemConfiguration.plist
+plutil -convert xml1 -o - ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist</code></pre>
+
+    <h3>Step 5: Protect Changes from Being Overwritten</h3>
+    <p>To prevent the MDM from overwriting our changes, we can set system immutable flags on the files:</p>
+    
+    <pre><code class="language-bash">chflags schg com.apple.SystemConfiguration.plist
+chflags schg ./$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist</code></pre>
+    
+    <p>Reboot the system for changes to take effect: <code class="language-bash">sudo reboot</code></p>
+
+    <h3>Step 6: Verify the Configuration</h3>
+    <p>After rebooting, check that the proxy settings are correctly applied: <code class="language-bash">scutil --proxy</code></p>
+    
+    <p>This should show that the system is using your local PAC file.</p>
+    
+    <p>You should now see tons of traffic going through Charles<br>
+    (all the MacOS system web queries essentially…)</p>
+    
+    <img src="./Proxy-Override_files/output.gif" alt="Charles Proxy output showing traffic">
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    
+    <h3>SSL Interception Issues:</h3>
+    <p>Some applications and services use certificate pinning or other security measures that prevent SSL interception. If you encounter connection issues with specific applications, you'll need to exclude their domains from SSL interception in Charles:</p>
+    
+    <ol>
+        <li>Open Charles Proxy</li>
+        <li>Go to Proxy &gt; SSL Proxying Settings</li>
+        <li>Add the problematic domains to the "Exclude" list</li>
+    </ol>
+    
+    <h3>Reverting Changes:</h3>
+    <p>If you need to revert the changes or make further modifications:</p>
+    
+    <p>Remove the system immutable flags:</p>
+    
+    <pre><code class="language-bash">chflags noschg /Library/Managed\ Preferences/com.apple.SystemConfiguration.plist
+chflags noschg /Library/Managed\ Preferences/$(stat -f "%Su" /dev/console)/com.apple.SystemConfiguration.plist</code></pre>
+    
+    <p>Either restore from backup or edit the files again to revert the changes.</p>
+
+    <h2 id="conclusion">Conclusion</h2>
+    <p>By modifying the MDM-managed proxy settings, we can route all system traffic through Charles Proxy for inspection and analysis. This technique provides valuable insights for security professionals, developers, and system administrators who need to troubleshoot or analyse network traffic in corporate environments.</p>
+    
+    <h3>Security Implications:</h3>
+    <p>Understanding this technique is crucial for security teams to:</p>
+    
+    <ol>
+        <li>Recognise potential vulnerabilities in their proxy configuration</li>
+        <li>Implement additional security measures to prevent unauthorized modifications</li>
+        <li>Consider defense-in-depth approaches that don't rely solely on proxy settings</li>
+        <li>Monitor for unauthorized changes to system configuration files</li>
+    </ol>
+    
+    <p>By implementing proper security controls and monitoring, organisations can better protect their networks while still allowing legitimate traffic inspection when necessary.</p>
+</body>
+</html>
